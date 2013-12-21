@@ -1,0 +1,3 @@
+[submodule "vendor/submodules/etags-select"]
+	path = vendor/submodules/etags-select
+	url = https://github.com/emacsmirror/etags-select.git
