@@ -28,7 +28,26 @@ in many programming languages:
 You may want to add TAGS to a global gitignore file. Otherwise you'll be adding
 it to every project's .gitignore file.
 
+## Configuration
+
+Thanks to @ardumont, you can configure the following:
+
+* *CTAGS-BINARY* - defaults to "ctags"; override if your exuberant ctags binary has a different name
+* *CTAGS-LOG-PREFIX* - defaults to ""; override if you like to know who is talking to you in the minibuffer
+
 ## Contributing
 
 GitHub pull requests on topic branches that leave the version number alone are
 preferred.
+
+## Changes
+
+* v1.0.2
+  * actually bump the version number (code is unchanged from 1.0.1); d'oh!
+
+* v1.0.1
+  * make ctags binary and message prefix configurable (thanks @ardumont!)
+  * remove errant tags-file from repo (thanks @ardumont!)
+
+* v1.0.0
+  * initial release
