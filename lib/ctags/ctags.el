@@ -1,6 +1,7 @@
 (require 'magit)
 
-(defvar *CTAGS-BINARY* "ctags-exuberant" "CTAGS binary to use for TAGS generation.")
+(defvar *CTAGS-BINARY*     "ctags" "CTAGS binary to use for TAGS generation.")
+(defvar *CTAGS-LOG-PREFIX* ""      "Log prefix message when generating the FLAGS")
 
 (defun set-project-tags-file-name ()
   (interactive)
@@ -47,6 +48,6 @@
   (let* ((tags-file-name (get-project-tags-file-name)))
     (when tags-file-name
       (generate-project-tags tags-file-name)
-      (message "ctags-pack - Regenerated project tags in %s" tags-file-name))))
+      (message "%sRegenerated project tags in %s" *CTAGS-LOG-PREFIX* tags-file-name))))
 
 (provide 'ctags)
