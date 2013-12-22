@@ -1,4 +1,7 @@
 (require 'magit)
+
+(defvar *CTAGS-BINARY* "ctags-exuberant" "CTAGS binary to use for TAGS generation.")
+
 (defun set-project-tags-file-name ()
   (interactive)
   "If the current directory is a git project (but not the user's home directory),
@@ -16,7 +19,7 @@
 (defun generate-project-tags (tags-file)
   "Generate tags for current project in `tags-file`"
   (interactive)
-  (call-process "ctags" nil nil nil
+  (call-process *CTAGS-BINARY* nil nil nil
                   "-Re"
                   "--exclude=.git"
                   "--exclude='.#*'"
