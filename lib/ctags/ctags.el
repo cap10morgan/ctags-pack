@@ -44,6 +44,6 @@
   (let* ((tags-file-name (get-project-tags-file-name)))
     (when tags-file-name
       (generate-project-tags tags-file-name)
-      (message "Regenerated project tags in %s" tags-file-name))))
+      (message "ctags-pack - Regenerated project tags in %s" tags-file-name))))
 
 (provide 'ctags)
