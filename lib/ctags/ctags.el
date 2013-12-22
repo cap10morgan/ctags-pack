@@ -1,3 +1,4 @@
+(require 'magit)
 (defun set-project-tags-file-name ()
   (interactive)
   "If the current directory is a git project (but not the user's home directory),
