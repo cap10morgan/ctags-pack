@@ -1,3 +1,8 @@
+(require 'magit)
+
+(defvar *CTAGS-BINARY*     "ctags" "CTAGS binary to use for TAGS generation.")
+(defvar *CTAGS-LOG-PREFIX* ""      "Log prefix message when generating the FLAGS")
+
 (defun set-project-tags-file-name ()
   (interactive)
   "If the current directory is a git project (but not the user's home directory),
@@ -15,7 +20,7 @@
 (defun generate-project-tags (tags-file)
   "Generate tags for current project in `tags-file`"
   (interactive)
-  (call-process "ctags" nil nil nil
+  (call-process *CTAGS-BINARY* nil nil nil
                   "-Re"
                   "--exclude=.git"
                   "--exclude='.#*'"
@@ -43,6 +48,6 @@
   (let* ((tags-file-name (get-project-tags-file-name)))
     (when tags-file-name
       (generate-project-tags tags-file-name)
-      (message "Regenerated project tags in %s" tags-file-name))))
+      (message "%sRegenerated project tags in %s" *CTAGS-LOG-PREFIX* tags-file-name))))
 
 (provide 'ctags)
